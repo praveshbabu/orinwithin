@@ -219,33 +219,36 @@ export default function OrinWithinWebsite() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#f8f3ea] text-stone-950">
-      <header className="sticky top-0 z-50 border-b border-white/60 bg-[#f8f3ea]/85 backdrop-blur-xl">
+    <div className="min-h-screen overflow-hidden bg-[#fff7ed] text-slate-950">
+      <div className="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,#f97316_0%,transparent_28%),radial-gradient(circle_at_top_right,#14b8a6_0%,transparent_28%),radial-gradient(circle_at_bottom_left,#a855f7_0%,transparent_25%),linear-gradient(135deg,#fff7ed_0%,#fef3c7_35%,#ecfeff_70%,#f5f3ff_100%)] opacity-80" />
+      <div className="fixed inset-0 -z-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.35)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.35)_1px,transparent_1px)] bg-[size:72px_72px]" />
+
+      <header className="sticky top-0 z-50 border-b border-white/50 bg-white/45 backdrop-blur-2xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
           <a href="#" className="flex items-center gap-3">
-            <div className="rounded-full bg-white p-1 shadow-sm ring-1 ring-stone-200">
+            <div className="rounded-full bg-white p-1 shadow-xl shadow-orange-200/50 ring-1 ring-white/70">
               <img
                 src="/Logo.jpg"
                 alt="Orin Within Logo"
-                className="h-11 w-11 rounded-full object-cover"
+                className="h-12 w-12 rounded-full object-cover"
               />
             </div>
             <div>
-              <p className="text-lg font-bold uppercase tracking-[0.18em]">
+              <p className="text-lg font-black uppercase tracking-[0.2em] text-slate-950">
                 Orin Within
               </p>
-              <p className="text-xs font-medium text-stone-600">
+              <p className="text-xs font-bold text-orange-700">
                 Illuminate The Potential Within
               </p>
             </div>
           </a>
 
-          <nav className="hidden items-center gap-8 text-sm font-semibold text-stone-700 lg:flex">
+          <nav className="hidden items-center gap-8 rounded-full bg-white/55 px-6 py-3 text-sm font-bold text-slate-700 shadow-sm ring-1 ring-white/70 lg:flex">
             {navigation.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="transition hover:text-stone-950"
+                className="transition hover:text-orange-700"
               >
                 {item.label}
               </a>
@@ -253,23 +256,27 @@ export default function OrinWithinWebsite() {
           </nav>
 
           <div className="hidden lg:block">
-            <Button className="rounded-full bg-stone-950 px-6 text-white hover:bg-stone-800">
+            <Button className="rounded-full bg-gradient-to-r from-orange-600 to-pink-600 px-6 text-white shadow-lg shadow-orange-300/50 hover:from-orange-700 hover:to-pink-700">
               Book a Discovery Call
             </Button>
           </div>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="rounded-full bg-white p-3 shadow-sm ring-1 ring-stone-200 lg:hidden"
+            className="rounded-full bg-white/80 p-3 shadow-sm ring-1 ring-white/70 lg:hidden"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
         </div>
 
         {mobileMenuOpen && (
-          <div className="border-t border-stone-200 bg-[#f8f3ea] px-5 py-5 lg:hidden">
-            <nav className="grid gap-4 text-sm font-semibold text-stone-700">
+          <div className="border-t border-white/50 bg-white/80 px-5 py-5 backdrop-blur-xl lg:hidden">
+            <nav className="grid gap-4 text-sm font-bold text-slate-700">
               {navigation.map((item) => (
                 <a
                   key={item.label}
@@ -287,9 +294,9 @@ export default function OrinWithinWebsite() {
 
       <main>
         <section className="relative overflow-hidden">
-          <div className="absolute left-1/2 top-0 -z-10 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-amber-200/40 blur-3xl" />
-          <div className="absolute right-0 top-20 -z-10 h-[420px] w-[420px] rounded-full bg-emerald-200/30 blur-3xl" />
-          <div className="absolute bottom-0 left-0 -z-10 h-[360px] w-[360px] rounded-full bg-orange-200/30 blur-3xl" />
+          <div className="absolute left-[-8rem] top-24 h-80 w-80 rounded-full bg-orange-400/30 blur-3xl" />
+          <div className="absolute right-[-8rem] top-32 h-96 w-96 rounded-full bg-teal-400/30 blur-3xl" />
+          <div className="absolute bottom-0 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-purple-400/20 blur-3xl" />
 
           <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-28">
             <motion.div
@@ -297,51 +304,55 @@ export default function OrinWithinWebsite() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-stone-700 shadow-sm ring-1 ring-stone-200">
-                <Sparkles className="h-4 w-4 text-amber-700" />
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-black text-slate-800 shadow-lg shadow-orange-200/30 ring-1 ring-white/80 backdrop-blur-xl">
+                <Sparkles className="h-4 w-4 text-orange-600" />
                 Lifestyle Transformation & Human Potential
               </div>
 
-              <h1 className="mt-7 max-w-4xl text-5xl font-black uppercase leading-[0.95] tracking-tight text-stone-950 md:text-7xl">
-                Illuminate The Potential Within
+              <h1 className="mt-7 max-w-4xl text-5xl font-black uppercase leading-[0.92] tracking-tight text-slate-950 md:text-7xl">
+                Illuminate The{" "}
+                <span className="bg-gradient-to-r from-orange-600 via-pink-600 to-purple-700 bg-clip-text text-transparent">
+                  Potential
+                </span>{" "}
+                Within
               </h1>
 
-              <p className="mt-7 max-w-2xl text-xl leading-9 text-stone-700">
+              <p className="mt-7 max-w-2xl text-xl font-medium leading-9 text-slate-700">
                 Helping individuals, families and organisations create lasting
                 transformation from within through coaching, nutrition,
                 behaviour change, hypnotherapy and corporate wellness.
               </p>
 
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                <Button className="rounded-full bg-stone-950 px-8 py-6 text-base text-white hover:bg-stone-800">
+                <Button className="rounded-full bg-gradient-to-r from-orange-600 to-pink-600 px-8 py-6 text-base text-white shadow-xl shadow-orange-300/50 hover:from-orange-700 hover:to-pink-700">
                   Start Your Transformation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
 
                 <Button
                   variant="outline"
-                  className="rounded-full border-stone-300 bg-white/70 px-8 py-6 text-base"
+                  className="rounded-full border-white/70 bg-white/65 px-8 py-6 text-base font-bold backdrop-blur-xl hover:bg-white"
                 >
                   Explore Our Programs
                 </Button>
               </div>
 
               <div className="mt-10 grid max-w-2xl grid-cols-3 gap-3">
-                <div className="rounded-3xl bg-white/80 p-4 shadow-sm ring-1 ring-stone-200">
-                  <p className="text-2xl font-black">5</p>
-                  <p className="mt-1 text-xs font-medium text-stone-600">
+                <div className="rounded-3xl bg-white/65 p-4 shadow-lg shadow-orange-200/20 ring-1 ring-white/70 backdrop-blur-xl">
+                  <p className="text-3xl font-black text-orange-700">5</p>
+                  <p className="mt-1 text-xs font-bold text-slate-600">
                     Core Transformation Areas
                   </p>
                 </div>
-                <div className="rounded-3xl bg-white/80 p-4 shadow-sm ring-1 ring-stone-200">
-                  <p className="text-2xl font-black">6–12</p>
-                  <p className="mt-1 text-xs font-medium text-stone-600">
+                <div className="rounded-3xl bg-white/65 p-4 shadow-lg shadow-orange-200/20 ring-1 ring-white/70 backdrop-blur-xl">
+                  <p className="text-3xl font-black text-teal-700">6–12</p>
+                  <p className="mt-1 text-xs font-bold text-slate-600">
                     Week Change Programs
                   </p>
                 </div>
-                <div className="rounded-3xl bg-white/80 p-4 shadow-sm ring-1 ring-stone-200">
-                  <p className="text-2xl font-black">360°</p>
-                  <p className="mt-1 text-xs font-medium text-stone-600">
+                <div className="rounded-3xl bg-white/65 p-4 shadow-lg shadow-orange-200/20 ring-1 ring-white/70 backdrop-blur-xl">
+                  <p className="text-3xl font-black text-purple-700">360°</p>
+                  <p className="mt-1 text-xs font-bold text-slate-600">
                     Mind, Body & Lifestyle
                   </p>
                 </div>
@@ -354,20 +365,22 @@ export default function OrinWithinWebsite() {
               transition={{ duration: 0.7, delay: 0.12 }}
               className="relative"
             >
-              <div className="absolute -right-6 -top-6 h-32 w-32 rounded-full bg-stone-950/10 blur-2xl" />
-              <div className="rounded-[2.5rem] bg-stone-950 p-4 shadow-2xl shadow-stone-400/40">
-                <div className="rounded-[2rem] bg-gradient-to-br from-amber-100 via-white to-emerald-50 p-7">
+              <div className="absolute -right-6 -top-6 h-32 w-32 rounded-full bg-pink-400/40 blur-2xl" />
+              <div className="absolute -bottom-6 -left-6 h-32 w-32 rounded-full bg-teal-400/40 blur-2xl" />
+
+              <div className="rounded-[2.5rem] bg-white/50 p-4 shadow-2xl shadow-orange-300/30 ring-1 ring-white/70 backdrop-blur-2xl">
+                <div className="rounded-[2rem] bg-gradient-to-br from-white via-orange-50 to-teal-50 p-7">
                   <div className="rounded-[1.5rem] border border-white/80 bg-white/75 p-7 shadow-inner backdrop-blur">
                     <div className="flex items-center justify-between gap-4">
                       <div>
-                        <p className="text-sm font-bold uppercase tracking-[0.2em] text-stone-500">
+                        <p className="text-sm font-black uppercase tracking-[0.22em] text-orange-700">
                           Orin Within
                         </p>
                         <h2 className="mt-3 text-3xl font-black tracking-tight">
                           Transformation Begins Within
                         </h2>
                       </div>
-                      <div className="rounded-full bg-stone-950 p-4 text-white">
+                      <div className="rounded-full bg-gradient-to-br from-orange-600 to-pink-600 p-4 text-white shadow-lg shadow-orange-300/50">
                         <HandHeart className="h-8 w-8" />
                       </div>
                     </div>
@@ -382,22 +395,22 @@ export default function OrinWithinWebsite() {
                       ].map((item) => (
                         <div
                           key={item}
-                          className="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm ring-1 ring-stone-100"
+                          className="flex items-center justify-between rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-100"
                         >
                           <div className="flex items-center gap-3">
-                            <CheckCircle2 className="h-5 w-5 text-emerald-700" />
-                            <span className="font-semibold">{item}</span>
+                            <CheckCircle2 className="h-5 w-5 text-teal-700" />
+                            <span className="font-bold">{item}</span>
                           </div>
-                          <ArrowRight className="h-4 w-4 text-stone-400" />
+                          <ArrowRight className="h-4 w-4 text-slate-400" />
                         </div>
                       ))}
                     </div>
 
-                    <div className="mt-8 rounded-3xl bg-stone-950 p-6 text-white">
-                      <p className="text-sm font-medium text-stone-300">
+                    <div className="mt-8 rounded-3xl bg-slate-950 p-6 text-white">
+                      <p className="text-sm font-bold text-orange-200">
                         Our Promise
                       </p>
-                      <p className="mt-3 text-2xl font-bold leading-snug">
+                      <p className="mt-3 text-2xl font-black leading-snug">
                         We do not just offer information. We create lasting
                         transformation.
                       </p>
@@ -409,16 +422,16 @@ export default function OrinWithinWebsite() {
           </div>
         </section>
 
-        <section className="border-y border-stone-200 bg-white/70 py-6">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-4 px-5 text-sm font-bold uppercase tracking-[0.18em] text-stone-600 lg:px-8">
+        <section className="border-y border-white/50 bg-white/50 py-6 backdrop-blur-xl">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-4 px-5 text-sm font-black uppercase tracking-[0.18em] text-slate-700 lg:px-8">
             <span>Coaching</span>
-            <span className="text-stone-300">•</span>
+            <span className="text-orange-400">•</span>
             <span>Nutrition</span>
-            <span className="text-stone-300">•</span>
+            <span className="text-teal-400">•</span>
             <span>Behaviour Change</span>
-            <span className="text-stone-300">•</span>
+            <span className="text-purple-400">•</span>
             <span>Hypnotherapy</span>
-            <span className="text-stone-300">•</span>
+            <span className="text-pink-400">•</span>
             <span>Corporate Wellness</span>
           </div>
         </section>
@@ -426,13 +439,13 @@ export default function OrinWithinWebsite() {
         <section id="about" className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
             <div>
-              <p className="text-sm font-black uppercase tracking-[0.22em] text-amber-800">
+              <p className="text-sm font-black uppercase tracking-[0.22em] text-orange-700">
                 What is Orin Within?
               </p>
               <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">
                 A lifestyle transformation and human potential company.
               </h2>
-              <p className="mt-6 text-lg leading-8 text-stone-700">
+              <p className="mt-6 text-lg font-medium leading-8 text-slate-700">
                 We combine practical coaching, wellbeing systems and inner
                 transformation to help people become the best version of
                 themselves.
@@ -443,14 +456,14 @@ export default function OrinWithinWebsite() {
               {pillars.map((pillar) => (
                 <Card
                   key={pillar.title}
-                  className="rounded-3xl border-stone-200 bg-white/80 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                  className="rounded-3xl border-white/70 bg-white/60 shadow-xl shadow-orange-200/10 backdrop-blur-xl transition hover:-translate-y-1 hover:shadow-2xl"
                 >
                   <CardContent className="p-6">
-                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-stone-950 text-white">
+                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-600 to-pink-600 text-white shadow-lg shadow-orange-300/40">
                       {pillar.icon}
                     </div>
-                    <h3 className="text-xl font-bold">{pillar.title}</h3>
-                    <p className="mt-3 leading-7 text-stone-700">
+                    <h3 className="text-xl font-black">{pillar.title}</h3>
+                    <p className="mt-3 leading-7 text-slate-700">
                       {pillar.text}
                     </p>
                   </CardContent>
@@ -460,16 +473,19 @@ export default function OrinWithinWebsite() {
           </div>
         </section>
 
-        <section id="offerings" className="bg-stone-950 py-24 text-white">
-          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <section id="offerings" className="relative overflow-hidden bg-slate-950 py-24 text-white">
+          <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-orange-500/20 blur-3xl" />
+          <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-teal-500/20 blur-3xl" />
+
+          <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="text-sm font-black uppercase tracking-[0.22em] text-amber-300">
+              <p className="text-sm font-black uppercase tracking-[0.22em] text-orange-300">
                 Our Core Offerings
               </p>
               <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">
                 Transformation programs for life, family and work.
               </h2>
-              <p className="mt-5 text-lg leading-8 text-stone-300">
+              <p className="mt-5 text-lg leading-8 text-slate-300">
                 Orin Within supports individuals, families, professionals,
                 leaders, teams and organisations through practical,
                 human-centred programs.
@@ -480,29 +496,29 @@ export default function OrinWithinWebsite() {
               {offerings.map((offering) => (
                 <Card
                   key={offering.title}
-                  className="overflow-hidden rounded-[2rem] border-white/10 bg-white/[0.06] text-white shadow-xl"
+                  className="overflow-hidden rounded-[2rem] border-white/10 bg-white/[0.07] text-white shadow-xl backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/[0.1]"
                 >
                   <CardContent className="p-0">
                     <div className="border-b border-white/10 bg-white/[0.05] p-8">
-                      <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-stone-950">
+                      <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-400 to-pink-500 text-white">
                         {offering.icon}
                       </div>
                       <h3 className="text-2xl font-black">{offering.title}</h3>
-                      <p className="mt-4 leading-7 text-stone-300">
+                      <p className="mt-4 leading-7 text-slate-300">
                         {offering.intro}
                       </p>
                     </div>
 
                     <div className="grid gap-8 p-8 md:grid-cols-2">
                       <div>
-                        <h4 className="font-bold text-amber-200">Services</h4>
+                        <h4 className="font-black text-orange-200">Services</h4>
                         <div className="mt-4 grid gap-3">
                           {offering.services.map((service) => (
                             <div
                               key={service}
-                              className="flex items-start gap-3 text-sm text-stone-200"
+                              className="flex items-start gap-3 text-sm text-slate-200"
                             >
-                              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" />
+                              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal-300" />
                               <span>{service}</span>
                             </div>
                           ))}
@@ -510,14 +526,14 @@ export default function OrinWithinWebsite() {
                       </div>
 
                       <div>
-                        <h4 className="font-bold text-amber-200">
+                        <h4 className="font-black text-orange-200">
                           Ideal Clients
                         </h4>
                         <div className="mt-4 flex flex-wrap gap-2">
                           {offering.clients.map((client) => (
                             <span
                               key={client}
-                              className="rounded-full bg-white/10 px-3 py-2 text-xs font-semibold text-stone-100"
+                              className="rounded-full bg-white/10 px-3 py-2 text-xs font-bold text-slate-100"
                             >
                               {client}
                             </span>
@@ -534,15 +550,15 @@ export default function OrinWithinWebsite() {
 
         <section className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-            <div className="rounded-[2rem] bg-white p-8 shadow-xl shadow-stone-300/30 ring-1 ring-stone-200">
-              <p className="text-sm font-black uppercase tracking-[0.22em] text-amber-800">
+            <div className="rounded-[2rem] bg-white/65 p-8 shadow-2xl shadow-orange-200/20 ring-1 ring-white/80 backdrop-blur-xl">
+              <p className="text-sm font-black uppercase tracking-[0.22em] text-orange-700">
                 What We Sell
               </p>
               <h2 className="mt-4 text-4xl font-black tracking-tight">
                 Better health. Better habits. Better leadership. Lasting
                 transformation.
               </h2>
-              <p className="mt-5 text-lg leading-8 text-stone-700">
+              <p className="mt-5 text-lg leading-8 text-slate-700">
                 Our work helps people create real internal change that produces
                 visible external results.
               </p>
@@ -552,13 +568,13 @@ export default function OrinWithinWebsite() {
               {outcomes.map((outcome) => (
                 <div
                   key={outcome.title}
-                  className="rounded-3xl bg-white/80 p-6 shadow-sm ring-1 ring-stone-200"
+                  className="rounded-3xl bg-white/65 p-6 shadow-lg shadow-orange-200/10 ring-1 ring-white/80 backdrop-blur-xl"
                 >
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-900">
+                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-100 text-teal-800">
                     {outcome.icon}
                   </div>
-                  <h3 className="text-xl font-bold">{outcome.title}</h3>
-                  <p className="mt-3 leading-7 text-stone-700">
+                  <h3 className="text-xl font-black">{outcome.title}</h3>
+                  <p className="mt-3 leading-7 text-slate-700">
                     {outcome.text}
                   </p>
                 </div>
@@ -567,10 +583,10 @@ export default function OrinWithinWebsite() {
           </div>
         </section>
 
-        <section id="programs" className="bg-white py-24">
+        <section id="programs" className="bg-white/60 py-24 backdrop-blur-xl">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="text-sm font-black uppercase tracking-[0.22em] text-amber-800">
+              <p className="text-sm font-black uppercase tracking-[0.22em] text-orange-700">
                 Program Structure
               </p>
               <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">
@@ -579,12 +595,12 @@ export default function OrinWithinWebsite() {
             </div>
 
             <div className="mt-14 grid gap-6 lg:grid-cols-2">
-              <div className="rounded-[2rem] bg-[#f8f3ea] p-8 ring-1 ring-stone-200">
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-stone-950 text-white">
+              <div className="rounded-[2rem] bg-gradient-to-br from-orange-50 to-white p-8 shadow-xl shadow-orange-200/20 ring-1 ring-white/80">
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-600 to-pink-600 text-white">
                   <Users className="h-7 w-7" />
                 </div>
                 <h3 className="text-3xl font-black">Individual Programs</h3>
-                <p className="mt-4 leading-8 text-stone-700">
+                <p className="mt-4 leading-8 text-slate-700">
                   Designed for people who want personal growth, lifestyle
                   improvement, mindset change and accountability.
                 </p>
@@ -596,21 +612,21 @@ export default function OrinWithinWebsite() {
                       className="flex items-center justify-between rounded-2xl bg-white p-5 shadow-sm"
                     >
                       <div className="flex items-center gap-3">
-                        <CalendarDays className="h-5 w-5 text-amber-800" />
-                        <span className="font-bold">{program}</span>
+                        <CalendarDays className="h-5 w-5 text-orange-700" />
+                        <span className="font-black">{program}</span>
                       </div>
-                      <ArrowRight className="h-4 w-4 text-stone-400" />
+                      <ArrowRight className="h-4 w-4 text-slate-400" />
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="rounded-[2rem] bg-stone-950 p-8 text-white">
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-stone-950">
+              <div className="rounded-[2rem] bg-gradient-to-br from-slate-950 to-slate-800 p-8 text-white shadow-2xl shadow-slate-400/20">
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-slate-950">
                   <Building2 className="h-7 w-7" />
                 </div>
                 <h3 className="text-3xl font-black">Corporate Programs</h3>
-                <p className="mt-4 leading-8 text-stone-300">
+                <p className="mt-4 leading-8 text-slate-300">
                   Designed for organisations that want healthier teams, stronger
                   leadership, reduced burnout and better engagement.
                 </p>
@@ -622,10 +638,10 @@ export default function OrinWithinWebsite() {
                       className="flex items-center justify-between rounded-2xl bg-white/10 p-5"
                     >
                       <div className="flex items-center gap-3">
-                        <CalendarDays className="h-5 w-5 text-amber-200" />
-                        <span className="font-bold">{program}</span>
+                        <CalendarDays className="h-5 w-5 text-orange-200" />
+                        <span className="font-black">{program}</span>
                       </div>
-                      <ArrowRight className="h-4 w-4 text-stone-400" />
+                      <ArrowRight className="h-4 w-4 text-slate-400" />
                     </div>
                   ))}
                 </div>
@@ -636,7 +652,7 @@ export default function OrinWithinWebsite() {
 
         <section id="clients" className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-amber-800">
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-orange-700">
               Who We Serve
             </p>
             <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">
@@ -648,11 +664,11 @@ export default function OrinWithinWebsite() {
             {idealClients.map((client) => (
               <Card
                 key={client.title}
-                className="rounded-[2rem] border-stone-200 bg-white/80 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-[2rem] border-white/70 bg-white/65 shadow-xl shadow-orange-200/10 backdrop-blur-xl transition hover:-translate-y-1 hover:shadow-2xl"
               >
                 <CardContent className="p-8">
                   <h3 className="text-2xl font-black">{client.title}</h3>
-                  <p className="mt-5 text-xl italic leading-9 text-stone-700">
+                  <p className="mt-5 text-xl italic leading-9 text-slate-700">
                     “{client.quote}”
                   </p>
                 </CardContent>
@@ -661,11 +677,14 @@ export default function OrinWithinWebsite() {
           </div>
         </section>
 
-        <section className="bg-stone-950 py-24 text-white">
-          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <section className="relative overflow-hidden bg-slate-950 py-24 text-white">
+          <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-purple-500/20 blur-3xl" />
+          <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-orange-500/20 blur-3xl" />
+
+          <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2">
               <div>
-                <p className="text-sm font-black uppercase tracking-[0.22em] text-amber-300">
+                <p className="text-sm font-black uppercase tracking-[0.22em] text-orange-300">
                   What Makes Us Different?
                 </p>
                 <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">
@@ -673,8 +692,8 @@ export default function OrinWithinWebsite() {
                 </h2>
               </div>
 
-              <div className="rounded-[2rem] bg-white/10 p-8">
-                <p className="text-lg leading-9 text-stone-200">
+              <div className="rounded-[2rem] bg-white/10 p-8 ring-1 ring-white/10 backdrop-blur-xl">
+                <p className="text-lg leading-9 text-slate-200">
                   Most businesses focus on external solutions. We focus on
                   internal change that creates external results. The answers
                   people seek are often already within them. Our role is to help
@@ -688,13 +707,13 @@ export default function OrinWithinWebsite() {
               {process.map((step) => (
                 <div
                   key={step.title}
-                  className="rounded-[2rem] bg-white/[0.06] p-8 ring-1 ring-white/10"
+                  className="rounded-[2rem] bg-white/[0.07] p-8 ring-1 ring-white/10 backdrop-blur-xl"
                 >
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-stone-950">
+                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-400 to-pink-500 text-white">
                     {step.icon}
                   </div>
                   <h3 className="text-2xl font-black">{step.title}</h3>
-                  <p className="mt-4 leading-8 text-stone-300">{step.text}</p>
+                  <p className="mt-4 leading-8 text-slate-300">{step.text}</p>
                 </div>
               ))}
             </div>
@@ -702,16 +721,16 @@ export default function OrinWithinWebsite() {
         </section>
 
         <section id="contact" className="mx-auto max-w-7xl px-5 py-24 lg:px-8">
-          <div className="overflow-hidden rounded-[2.5rem] bg-white shadow-2xl shadow-stone-300/30 ring-1 ring-stone-200">
+          <div className="overflow-hidden rounded-[2.5rem] bg-white/75 shadow-2xl shadow-orange-300/20 ring-1 ring-white/80 backdrop-blur-xl">
             <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-              <div className="bg-gradient-to-br from-stone-950 to-stone-800 p-8 text-white md:p-12">
-                <p className="text-sm font-black uppercase tracking-[0.22em] text-amber-300">
+              <div className="bg-gradient-to-br from-orange-600 via-pink-600 to-purple-700 p-8 text-white md:p-12">
+                <p className="text-sm font-black uppercase tracking-[0.22em] text-orange-100">
                   Contact Orin Within
                 </p>
                 <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">
                   Ready to begin your transformation?
                 </h2>
-                <p className="mt-6 text-lg leading-9 text-stone-300">
+                <p className="mt-6 text-lg leading-9 text-white/90">
                   Take the first step towards clarity, better health, stronger
                   habits, improved leadership and lasting transformation.
                 </p>
@@ -723,8 +742,8 @@ export default function OrinWithinWebsite() {
                     "Discuss family lifestyle transformation",
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-emerald-300" />
-                      <span>{item}</span>
+                      <CheckCircle2 className="h-5 w-5 text-white" />
+                      <span className="font-bold">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -733,15 +752,15 @@ export default function OrinWithinWebsite() {
               <div className="p-8 md:p-12">
                 <div className="grid gap-5">
                   <input
-                    className="rounded-2xl border border-stone-200 bg-stone-50 px-5 py-4 outline-none transition focus:border-stone-500 focus:bg-white"
+                    className="rounded-2xl border border-slate-200 bg-white/80 px-5 py-4 outline-none transition focus:border-orange-500 focus:bg-white"
                     placeholder="Your name"
                   />
                   <input
                     type="email"
-                    className="rounded-2xl border border-stone-200 bg-stone-50 px-5 py-4 outline-none transition focus:border-stone-500 focus:bg-white"
+                    className="rounded-2xl border border-slate-200 bg-white/80 px-5 py-4 outline-none transition focus:border-orange-500 focus:bg-white"
                     placeholder="Email address"
                   />
-                  <select className="rounded-2xl border border-stone-200 bg-stone-50 px-5 py-4 outline-none transition focus:border-stone-500 focus:bg-white">
+                  <select className="rounded-2xl border border-slate-200 bg-white/80 px-5 py-4 outline-none transition focus:border-orange-500 focus:bg-white">
                     <option>What are you interested in?</option>
                     <option>Corporate Wellness</option>
                     <option>Nutrition & Lifestyle Transformation</option>
@@ -749,14 +768,14 @@ export default function OrinWithinWebsite() {
                     <option>Hypnotherapy & Mindset Reset</option>
                   </select>
                   <textarea
-                    className="min-h-36 rounded-2xl border border-stone-200 bg-stone-50 px-5 py-4 outline-none transition focus:border-stone-500 focus:bg-white"
+                    className="min-h-36 rounded-2xl border border-slate-200 bg-white/80 px-5 py-4 outline-none transition focus:border-orange-500 focus:bg-white"
                     placeholder="Tell us what you would like support with"
                   />
-                  <Button className="rounded-full bg-stone-950 py-6 text-base text-white hover:bg-stone-800">
+                  <Button className="rounded-full bg-gradient-to-r from-orange-600 to-pink-600 py-6 text-base text-white shadow-xl shadow-orange-300/40 hover:from-orange-700 hover:to-pink-700">
                     Send Message
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
-                  <p className="text-center text-sm text-stone-500">
+                  <p className="text-center text-sm font-bold text-slate-500">
                     Transformation Begins Within
                   </p>
                 </div>
@@ -765,26 +784,28 @@ export default function OrinWithinWebsite() {
           </div>
         </section>
 
-        <section className="bg-[#f8f3ea] px-5 py-16 text-center">
-          <img
-            src="/Logo.jpg"
-            alt="Orin Within Logo"
-            className="mx-auto h-20 w-20 rounded-full object-cover shadow-lg ring-4 ring-white"
-          />
-          <h2 className="mt-6 text-4xl font-black uppercase tracking-tight">
-            Orin Within
-          </h2>
-          <p className="mt-3 text-2xl font-semibold text-stone-700">
-            “Transformation Begins Within”
-          </p>
-          <p className="mt-4 text-lg font-bold uppercase tracking-[0.22em] text-amber-800">
-            Illuminate • Transform • Thrive
-          </p>
+        <section className="px-5 py-16 text-center">
+          <div className="mx-auto max-w-4xl rounded-[2.5rem] bg-white/60 p-10 shadow-2xl shadow-orange-200/20 ring-1 ring-white/80 backdrop-blur-xl">
+            <img
+              src="/Logo.jpg"
+              alt="Orin Within Logo"
+              className="mx-auto h-20 w-20 rounded-full object-cover shadow-lg ring-4 ring-white"
+            />
+            <h2 className="mt-6 text-4xl font-black uppercase tracking-tight">
+              Orin Within
+            </h2>
+            <p className="mt-3 text-2xl font-bold text-slate-700">
+              “Transformation Begins Within”
+            </p>
+            <p className="mt-4 text-lg font-black uppercase tracking-[0.22em] text-orange-700">
+              Illuminate • Transform • Thrive
+            </p>
+          </div>
         </section>
       </main>
 
-      <footer className="border-t border-stone-200 bg-white py-8">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 text-sm text-stone-600 md:flex-row lg:px-8">
+      <footer className="border-t border-white/60 bg-white/55 py-8 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 text-sm font-semibold text-slate-600 md:flex-row lg:px-8">
           <p>© 2026 Orin Within. All rights reserved.</p>
           <p>Helping people create lasting transformation from within.</p>
         </div>
