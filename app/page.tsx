@@ -2,41 +2,146 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  CheckCircle2,
-  Heart,
-  Leaf,
-  Sparkles,
-  Users,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function OrinWithinWebsite() {
-  const services = [
+  const pillars = [
+    "🧠 Coaching",
+    "🥗 Nutrition",
+    "🌱 Behaviour Change",
+    "🌀 Hypnotherapy",
+    "🏢 Corporate Wellness",
+  ];
+
+  const offerings = [
     {
-      icon: <Heart className="h-7 w-7" />,
-      title: "Life Coaching",
-      text: "Personal guidance to help you gain clarity, confidence, and direction in life.",
+      number: "1",
+      title: "Corporate Wellness",
+      intro:
+        "We help organisations build healthier teams, better leaders, reduced burnout, higher engagement, and stronger workplace culture.",
+      services: [
+        "Corporate Wellness Workshops",
+        "Leadership Development",
+        "Stress & Burnout Programs",
+        "Team Coaching",
+        "Behaviour Change Programs",
+      ],
+      clients: [
+        "Corporate Teams",
+        "Childcare Organisations",
+        "Small Businesses",
+        "Leadership Teams",
+      ],
     },
     {
-      icon: <Leaf className="h-7 w-7" />,
-      title: "Mindset & Wellbeing",
-      text: "Build calm, balance, and resilience through simple practical tools.",
+      number: "2",
+      title: "Nutrition & Lifestyle Transformation",
+      intro:
+        "We help individuals and families create healthier lifestyles through practical education, support, and habit change.",
+      services: [
+        "Nutrition Coaching",
+        "Meal Planning",
+        "Family Wellness Programs",
+        "Cooking Education",
+        "Healthy Lifestyle Workshops",
+        "Behaviour Change Support",
+      ],
+      clients: [
+        "Parents",
+        "Families",
+        "Busy Professionals",
+        "Childcare Communities",
+      ],
     },
     {
-      icon: <Users className="h-7 w-7" />,
-      title: "Personal Growth Sessions",
-      text: "One-on-one support to help you create meaningful change and move forward.",
+      number: "3",
+      title: "Life Coaching & Performance Coaching",
+      intro:
+        "Helping people move from where they are to where they want to be with clarity, direction, and accountability.",
+      services: [
+        "Goal Setting",
+        "Accountability Coaching",
+        "Leadership Coaching",
+        "Career Transition Coaching",
+        "Purpose & Direction Coaching",
+        "Personal Growth Programs",
+      ],
+      clients: [
+        "Professionals",
+        "Business Owners",
+        "Parents",
+        "Emerging Leaders",
+      ],
+    },
+    {
+      number: "4",
+      title: "Hypnotherapy & Mindset Reset",
+      intro:
+        "Helping people create change at the subconscious level so new habits and behaviours can take root.",
+      services: [
+        "Smoking Cessation",
+        "Stress Management",
+        "Confidence Building",
+        "Habit Change",
+        "Sleep Support",
+        "Anxiety Reduction",
+      ],
+      clients: [
+        "Individuals seeking behavioural change",
+        "Coaching clients wanting faster results",
+      ],
     },
   ];
 
-  const benefits = [
-    "Find clarity when life feels confusing",
-    "Build confidence in your decisions",
-    "Create healthier routines and habits",
-    "Improve emotional balance and self-awareness",
+  const individualPrograms = [
+    "6 Week Accelerator",
+    "8 Week Transformation",
+    "12 Week Deep Change Program",
+  ];
+
+  const corporatePrograms = [
+    "Half Day Workshops",
+    "Full Day Wellness Programs",
+    "6 Week Team Programs",
+    "12 Week Leadership Programs",
+  ];
+
+  const whoWeServe = [
+    "👨‍👩‍👧 Families",
+    "👩‍💼 Professionals",
+    "🏢 Organisations",
+    "🌏 Communities",
+  ];
+
+  const idealClients = [
+    {
+      title: "The Overwhelmed Parent",
+      quote: "I don’t know how to create healthier habits for my family.",
+    },
+    {
+      title: "The Burnt-Out Professional",
+      quote: "I have success but no balance.",
+    },
+    {
+      title: "The Corporate Leader",
+      quote: "My team is stressed and disengaged.",
+    },
+    {
+      title: "The Individual Seeking Change",
+      quote: "I know I need to change but I don’t know where to start.",
+    },
+  ];
+
+  const whatWeSell = [
+    "Better Health",
+    "Better Habits",
+    "Better Relationships",
+    "Better Leadership",
+    "Better Performance",
+    "Greater Purpose",
+    "Lasting Transformation",
   ];
 
   return (
@@ -58,8 +163,11 @@ export default function OrinWithinWebsite() {
             <a href="#about" className="hover:text-stone-950">
               About
             </a>
-            <a href="#services" className="hover:text-stone-950">
-              Services
+            <a href="#offerings" className="hover:text-stone-950">
+              Offerings
+            </a>
+            <a href="#programs" className="hover:text-stone-950">
+              Programs
             </a>
             <a href="#contact" className="hover:text-stone-950">
               Contact
@@ -83,17 +191,16 @@ export default function OrinWithinWebsite() {
               transition={{ duration: 0.7 }}
             >
               <p className="mb-4 inline-flex rounded-full bg-white px-4 py-2 text-sm font-medium text-stone-700 shadow-sm">
-                Coaching for clarity, calm, and personal growth
+                Illuminate The Potential Within
               </p>
 
-              <h1 className="text-5xl font-bold leading-tight tracking-tight md:text-6xl">
-                Discover the strength already within you.
+              <h1 className="text-5xl font-bold uppercase leading-tight tracking-tight md:text-6xl">
+                Orin Within
               </h1>
 
-              <p className="mt-6 max-w-xl text-lg leading-8 text-stone-700">
-                Orin Within helps you reconnect with your purpose, shift your
-                mindset, and take confident steps towards a more balanced and
-                meaningful life.
+              <p className="mt-6 max-w-xl text-xl leading-8 text-stone-700">
+                Helping individuals, families and organisations create lasting
+                transformation from within.
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -105,7 +212,7 @@ export default function OrinWithinWebsite() {
                   variant="outline"
                   className="rounded-full border-stone-300 px-7 py-6 text-base"
                 >
-                  Learn More
+                  Explore Programs
                 </Button>
               </div>
             </motion.div>
@@ -122,16 +229,15 @@ export default function OrinWithinWebsite() {
                     <div>
                       <Sparkles className="h-10 w-10 text-stone-700" />
                       <h2 className="mt-8 text-3xl font-semibold">
-                        Pause. Reflect. Grow.
+                        Transformation Begins Within
                       </h2>
                       <p className="mt-4 text-stone-700">
-                        A safe space to explore who you are, where you are
-                        going, and what you need to move forward.
+                        Illuminate • Transform • Thrive
                       </p>
                     </div>
 
                     <div className="grid gap-3">
-                      {benefits.slice(0, 3).map((item) => (
+                      {whatWeSell.slice(0, 5).map((item) => (
                         <div
                           key={item}
                           className="flex items-center gap-3 rounded-full bg-white px-4 py-3 text-sm shadow-sm"
@@ -152,61 +258,100 @@ export default function OrinWithinWebsite() {
           <div className="grid gap-12 md:grid-cols-2">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-stone-500">
-                About Orin Within
+                What is Orin Within?
               </p>
               <h2 className="mt-4 text-4xl font-bold tracking-tight">
-                A gentle coaching space for real life change.
+                A lifestyle transformation and human potential company.
               </h2>
             </div>
 
             <div className="text-lg leading-8 text-stone-700">
               <p>
-                Orin Within is built on the belief that transformation starts
-                from within. Through calm conversation, thoughtful reflection,
-                and practical action steps, we help you reconnect with your
-                inner clarity and create meaningful progress.
+                Orin Within combines coaching, nutrition, behaviour change,
+                hypnotherapy and corporate wellness to help people become the
+                best version of themselves.
               </p>
 
-              <p className="mt-5">
-                Whether you are feeling stuck, seeking direction, or ready to
-                grow into your next chapter, our sessions are designed to
-                support you with warmth, honesty, and encouragement.
-              </p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {pillars.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl bg-white px-5 py-4 text-base font-medium shadow-sm"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        <section id="services" className="bg-white py-20">
+        <section id="offerings" className="bg-white py-20">
           <div className="mx-auto max-w-7xl px-6">
-            <div className="mx-auto max-w-2xl text-center">
+            <div className="mx-auto max-w-3xl text-center">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-stone-500">
-                Services
+                Our Core Offerings
               </p>
               <h2 className="mt-4 text-4xl font-bold tracking-tight">
-                Support for your personal journey
+                Support for individuals, families and organisations
               </h2>
               <p className="mt-4 text-lg text-stone-700">
-                Practical coaching sessions designed to help you slow down,
-                understand yourself, and move forward with purpose.
+                We create practical transformation programs across wellness,
+                mindset, leadership, nutrition and behaviour change.
               </p>
             </div>
 
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
-              {services.map((service) => (
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
+              {offerings.map((offering) => (
                 <Card
-                  key={service.title}
+                  key={offering.title}
                   className="rounded-3xl border-stone-200 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                 >
                   <CardContent className="p-8">
-                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-stone-100 text-stone-800">
-                      {service.icon}
+                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-stone-900 text-2xl font-bold text-white">
+                      {offering.number}
                     </div>
+
                     <h3 className="text-2xl font-semibold">
-                      {service.title}
+                      {offering.title}
                     </h3>
+
                     <p className="mt-4 leading-7 text-stone-700">
-                      {service.text}
+                      {offering.intro}
                     </p>
+
+                    <div className="mt-6">
+                      <h4 className="font-semibold text-stone-900">
+                        Services
+                      </h4>
+                      <div className="mt-3 grid gap-2">
+                        {offering.services.map((service) => (
+                          <div
+                            key={service}
+                            className="flex items-start gap-2 text-sm text-stone-700"
+                          >
+                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-stone-700" />
+                            <span>{service}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mt-6">
+                      <h4 className="font-semibold text-stone-900">
+                        Ideal Clients
+                      </h4>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {offering.clients.map((client) => (
+                          <span
+                            key={client}
+                            className="rounded-full bg-stone-100 px-3 py-1 text-sm text-stone-700"
+                          >
+                            {client}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
@@ -214,45 +359,161 @@ export default function OrinWithinWebsite() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-6 py-20">
-          <div className="grid gap-12 rounded-[2rem] bg-stone-900 p-8 text-white md:grid-cols-2 md:p-12">
-            <div>
+        <section id="programs" className="mx-auto max-w-7xl px-6 py-20">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="rounded-[2rem] bg-stone-900 p-8 text-white md:p-10">
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-stone-300">
-                Why choose us
+                Individual Programs
               </p>
-              <h2 className="mt-4 text-4xl font-bold tracking-tight">
-                Small steps. Deep clarity. Lasting change.
+              <h2 className="mt-4 text-3xl font-bold tracking-tight">
+                Personal transformation programs
               </h2>
-              <p className="mt-5 text-lg leading-8 text-stone-300">
-                We focus on simple, honest, and practical guidance. No pressure.
-                No judgement. Just a grounded space to help you move forward.
-              </p>
+
+              <div className="mt-8 grid gap-4">
+                {individualPrograms.map((program) => (
+                  <div
+                    key={program}
+                    className="flex items-center gap-3 rounded-2xl bg-white/10 p-4"
+                  >
+                    <CheckCircle2 className="h-5 w-5 shrink-0 text-white" />
+                    <span>{program}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="grid gap-4">
-              {benefits.map((item) => (
+            <div className="rounded-[2rem] bg-white p-8 shadow-xl shadow-stone-200 md:p-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-stone-500">
+                Corporate Programs
+              </p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight">
+                Workplace wellness and leadership programs
+              </h2>
+
+              <div className="mt-8 grid gap-4">
+                {corporatePrograms.map((program) => (
+                  <div
+                    key={program}
+                    className="flex items-center gap-3 rounded-2xl bg-stone-100 p-4"
+                  >
+                    <CheckCircle2 className="h-5 w-5 shrink-0 text-stone-700" />
+                    <span>{program}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-stone-100 py-20">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mx-auto max-w-3xl text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-stone-500">
+                Who We Serve
+              </p>
+              <h2 className="mt-4 text-4xl font-bold tracking-tight">
+                Built for real people, real families and real workplaces
+              </h2>
+            </div>
+
+            <div className="mt-12 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+              {whoWeServe.map((item) => (
                 <div
                   key={item}
-                  className="flex items-start gap-3 rounded-2xl bg-white/10 p-4"
+                  className="rounded-3xl bg-white p-6 text-center text-lg font-semibold shadow-sm"
                 >
-                  <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-white" />
-                  <span className="text-stone-100">{item}</span>
+                  {item}
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="bg-stone-100 py-20">
-          <div className="mx-auto max-w-4xl px-6 text-center">
+        <section className="mx-auto max-w-7xl px-6 py-20">
+          <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-stone-500">
-              Client words
+              Our Ideal Clients
             </p>
-            <blockquote className="mt-6 text-3xl font-medium leading-snug text-stone-900">
-              “The sessions helped me feel calmer, clearer, and more confident
-              about the direction I wanted to take.”
-            </blockquote>
-            <p className="mt-6 text-stone-600">— Coaching client</p>
+            <h2 className="mt-4 text-4xl font-bold tracking-tight">
+              We support people who are ready for change
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {idealClients.map((client) => (
+              <Card
+                key={client.title}
+                className="rounded-3xl border-stone-200 shadow-sm"
+              >
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-semibold">{client.title}</h3>
+                  <p className="mt-4 text-lg italic leading-8 text-stone-700">
+                    “{client.quote}”
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-white py-20">
+          <div className="mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-2">
+            <div className="rounded-[2rem] bg-stone-900 p-8 text-white md:p-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-stone-300">
+                What Makes Us Different?
+              </p>
+              <h2 className="mt-4 text-4xl font-bold tracking-tight">
+                Most businesses offer information. We create transformation.
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-stone-300">
+                Most businesses focus on external solutions. We focus on
+                internal change that creates external results.
+              </p>
+            </div>
+
+            <div className="rounded-[2rem] bg-stone-50 p-8 md:p-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-stone-500">
+                Our Philosophy
+              </p>
+              <h2 className="mt-4 text-4xl font-bold tracking-tight">
+                The answers people seek are often already within them.
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-stone-700">
+                Our role is to help illuminate that potential and create the
+                systems, support and accountability that allow it to grow.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-7xl px-6 py-20">
+          <div className="rounded-[2rem] bg-stone-900 p-8 text-white md:p-12">
+            <div className="grid gap-12 md:grid-cols-2">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-stone-300">
+                  Our Simple Explanation
+                </p>
+                <h2 className="mt-4 text-4xl font-bold tracking-tight">
+                  What do we sell?
+                </h2>
+                <p className="mt-5 text-lg leading-8 text-stone-300">
+                  We sell transformation that helps people improve their health,
+                  habits, relationships, leadership, performance and purpose.
+                </p>
+              </div>
+
+              <div className="grid gap-4">
+                {whatWeSell.map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-start gap-3 rounded-2xl bg-white/10 p-4"
+                  >
+                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-white" />
+                    <span className="text-stone-100">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -267,8 +528,8 @@ export default function OrinWithinWebsite() {
                   Ready to begin?
                 </h2>
                 <p className="mt-5 text-lg leading-8 text-stone-700">
-                  Take the first step towards clarity and growth. Reach out to
-                  book an introductory session.
+                  Take the first step towards clarity, health, growth and
+                  transformation. Reach out to book an introductory session.
                 </p>
               </div>
 
@@ -279,6 +540,7 @@ export default function OrinWithinWebsite() {
                     placeholder="Your name"
                   />
                   <input
+                    type="email"
                     className="rounded-2xl border border-stone-200 px-4 py-4 outline-none focus:border-stone-500"
                     placeholder="Email address"
                   />
@@ -294,12 +556,26 @@ export default function OrinWithinWebsite() {
             </div>
           </div>
         </section>
+
+        <section className="bg-stone-100 py-16">
+          <div className="mx-auto max-w-4xl px-6 text-center">
+            <h2 className="text-4xl font-bold uppercase tracking-tight">
+              Orin Within
+            </h2>
+            <p className="mt-4 text-2xl font-medium">
+              “Transformation Begins Within”
+            </p>
+            <p className="mt-4 text-lg text-stone-700">
+              Illuminate • Transform • Thrive
+            </p>
+          </div>
+        </section>
       </main>
 
       <footer className="border-t border-stone-200 py-8">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-sm text-stone-600 md:flex-row">
           <p>© 2026 Orin Within. All rights reserved.</p>
-          <p>Clarity • Calm • Growth</p>
+          <p>Illuminate • Transform • Thrive</p>
         </div>
       </footer>
     </div>
