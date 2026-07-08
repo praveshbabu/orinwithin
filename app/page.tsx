@@ -23,11 +23,13 @@ import {
   Utensils,
   X,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function OrinWithinWebsite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const bookingLink =
+    "mailto:learnfoodculture@gmail.com?subject=Book%20a%20Discovery%20Call%20-%20Orin%20Within&body=Hi%20Orin%20Within%2C%0A%0AI%20would%20like%20to%20book%20a%20discovery%20call.%0A%0AName%3A%0APhone%3A%0APreferred%20day%20and%20time%3A%0A%0AThank%20you.";
 
   const navigation = [
     { label: "About", href: "#about" },
@@ -255,11 +257,12 @@ export default function OrinWithinWebsite() {
             ))}
           </nav>
 
-          <div className="hidden lg:block">
-            <Button className="rounded-full bg-gradient-to-r from-orange-600 to-pink-600 px-6 text-white shadow-lg shadow-orange-300/50 hover:from-orange-700 hover:to-pink-700">
-              Book a Discovery Call
-            </Button>
-          </div>
+          <a
+            href={bookingLink}
+            className="hidden rounded-full bg-gradient-to-r from-orange-600 to-pink-600 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-orange-300/50 transition hover:from-orange-700 hover:to-pink-700 lg:inline-flex"
+          >
+            Book a Discovery Call
+          </a>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -287,6 +290,13 @@ export default function OrinWithinWebsite() {
                   {item.label}
                 </a>
               ))}
+
+              <a
+                href={bookingLink}
+                className="rounded-2xl bg-gradient-to-r from-orange-600 to-pink-600 px-4 py-3 text-center font-bold text-white shadow-lg shadow-orange-300/40"
+              >
+                Book a Discovery Call
+              </a>
             </nav>
           </div>
         )}
@@ -324,17 +334,20 @@ export default function OrinWithinWebsite() {
               </p>
 
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                <Button className="rounded-full bg-gradient-to-r from-orange-600 to-pink-600 px-8 py-6 text-base text-white shadow-xl shadow-orange-300/50 hover:from-orange-700 hover:to-pink-700">
+                <a
+                  href={bookingLink}
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-orange-600 to-pink-600 px-8 py-4 text-base font-bold text-white shadow-xl shadow-orange-300/50 transition hover:from-orange-700 hover:to-pink-700"
+                >
                   Start Your Transformation
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                </a>
 
-                <Button
-                  variant="outline"
-                  className="rounded-full border-white/70 bg-white/65 px-8 py-6 text-base font-bold backdrop-blur-xl hover:bg-white"
+                <a
+                  href="#programs"
+                  className="inline-flex items-center justify-center rounded-full border border-white/70 bg-white/65 px-8 py-4 text-base font-bold text-slate-900 backdrop-blur-xl transition hover:bg-white"
                 >
                   Explore Our Programs
-                </Button>
+                </a>
               </div>
 
               <div className="mt-10 grid max-w-2xl grid-cols-3 gap-3">
@@ -473,7 +486,10 @@ export default function OrinWithinWebsite() {
           </div>
         </section>
 
-        <section id="offerings" className="relative overflow-hidden bg-slate-950 py-24 text-white">
+        <section
+          id="offerings"
+          className="relative overflow-hidden bg-slate-950 py-24 text-white"
+        >
           <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-orange-500/20 blur-3xl" />
           <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-teal-500/20 blur-3xl" />
 
@@ -511,7 +527,9 @@ export default function OrinWithinWebsite() {
 
                     <div className="grid gap-8 p-8 md:grid-cols-2">
                       <div>
-                        <h4 className="font-black text-orange-200">Services</h4>
+                        <h4 className="font-black text-orange-200">
+                          Services
+                        </h4>
                         <div className="mt-4 grid gap-3">
                           {offering.services.map((service) => (
                             <div
@@ -771,12 +789,17 @@ export default function OrinWithinWebsite() {
                     className="min-h-36 rounded-2xl border border-slate-200 bg-white/80 px-5 py-4 outline-none transition focus:border-orange-500 focus:bg-white"
                     placeholder="Tell us what you would like support with"
                   />
-                  <Button className="rounded-full bg-gradient-to-r from-orange-600 to-pink-600 py-6 text-base text-white shadow-xl shadow-orange-300/40 hover:from-orange-700 hover:to-pink-700">
+
+                  <a
+                    href={bookingLink}
+                    className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-orange-600 to-pink-600 py-4 text-base font-bold text-white shadow-xl shadow-orange-300/40 transition hover:from-orange-700 hover:to-pink-700"
+                  >
                     Send Message
                     <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
+                  </a>
+
                   <p className="text-center text-sm font-bold text-slate-500">
-                    Transformation Begins Within
+                    Email: learnfoodculture@gmail.com
                   </p>
                 </div>
               </div>
